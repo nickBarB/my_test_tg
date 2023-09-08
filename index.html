@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+
+        }
+
+        body {
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
+
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 60px;
+            width: 180px;
+            font-size: 20px;
+            font-weight: 200;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+
+        }
+
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <h1 style="margin: 0 auto">SITE</h1>
+    <p style="margin: 0 auto">info info info</p>
+    <button id="press">PRESS</button>
+    <div id="user_data" style="display: none">
+        <input type="text" placeholder="DATA" id="user">
+    </div>
+
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    let tg = window.Telegram.WebApp;
+    let press = document.getElementById('press');
+    tg.expand();
+
+    press.addEventListener("click", () => {
+        document.getElementById("user_data").style.display = "block";
+        document.getElementById("user").value = tg.initDataUnsafe.user.id + " " + tg.initDataUnsafe.user.first_name
+    });
+
+</script>
+</body>
+</html>
