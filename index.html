@@ -18,6 +18,9 @@
             margin-top: 30px;
             margin-bottom: 10px;
         }
+        p {
+            margin: auto;
+        }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -37,6 +40,8 @@
             border-radius: 5px;
             color: var(--tg-theme-button-color);
             background: var(--tg-theme-button-text-color);
+            font-size: 20px;
+            font-weight: 200;
         }
 
         button {
@@ -63,13 +68,13 @@
 </head>
 <body id="all_data" style="display: none">
 <div id="main">
-    <h1 style="margin: 0 auto">SITE</h1>
-    <p style="margin: 0 auto">info info info</p>
-    <div style="position: relative; display: flex; flex-wrap: wrap; align-items: stretch; width: 100%;">
-        <input style="position: relative; flex: 1 1 auto; width: 1%; min-width: 0;" type="text"
+    <h1>SITE</h1>
+    <p>info info info</p>
+    <div style="display: flex; align-items: stretch; width: 100%;">
+        <input type="text"
                placeholder="Recipient's username" aria-label="Recipient's username"
                aria-describedby="button-search">
-        <button style="position: relative; width: auto;" type="button" id="button-search">Search</button>
+        <button type="button" id="button-search">Search</button>
     </div>
     <br>
     <button id="press">PRESS</button>
