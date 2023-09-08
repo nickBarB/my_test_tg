@@ -24,6 +24,12 @@
             text-align: center;
         }
 
+        input {
+            border-radius: 5px;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+
         button {
             border: 1px;
             border-color: var(--tg-theme-secondary-bg-color);
@@ -50,7 +56,15 @@
 <div id="main">
     <h1 style="margin: 0 auto">SITE</h1>
     <p style="margin: 0 auto">info info info</p>
+    <div>
+        <input type="text" placeholder="Recipient's username" aria-label="Recipient's username"
+               aria-describedby="button-search">
+        <button type="button" id="button-search">Search</button>
+    </div>
+    <br>
     <button id="press">PRESS</button>
+
+
     <div id="user_data" style="display: none">
         <input type="text" placeholder="DATA" id="user">
     </div>
