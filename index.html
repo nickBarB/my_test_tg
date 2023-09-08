@@ -113,13 +113,7 @@
 
     press.addEventListener("click", () => {
         document.getElementById("user_data").style.display = "block";
-        let userData = document.getElementById("user").value = "TG USER ID:" + tg.initDataUnsafe.user.id
-
-        let data = {
-            data: userData,
-            info: 'INFO -!  ! ! !!!'
-        }
-        tg.sendData(JSON.stringify(data))
+        document.getElementById("user").value = "TG USER ID:" + tg.initDataUnsafe.user.id
     });
 
 
