@@ -34,6 +34,13 @@
             width: 100%;
             padding: 20px;
             text-align: center;
+            position: fixed;
+        }
+
+        #main_data {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
         }
 
         input {
@@ -73,13 +80,14 @@
 <div id="main">
     <h1>Employee Search</h1>
     <p>please enter your information</p>
-    <div style="display: flex; align-items: center; width: 100%; position: sticky">
+    <div style="display: flex; align-items: center; width: 100%;">
         <input type="text"
                placeholder="Recipient's username" aria-label="Recipient's username"
                aria-describedby="button-search">
         <button type="button" id="button-search">Search</button>
     </div>
-
+</div>
+<div id="main_data">
     <ul style="margin: 15px; padding: 10px; border: 2px; border-radius: 5px; background: var(--tg-theme-secondary-bg-color);">
         <li>1</li>
         <li>2</li>
@@ -111,13 +119,10 @@
         <li>7</li>
     </ul>
 
-
     <button id="press">PRESS</button>
     <div id="user_data" style="display: none">
         <input type="text" placeholder="DATA" id="user">
     </div>
-
-
 </div>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
