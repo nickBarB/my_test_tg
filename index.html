@@ -45,7 +45,7 @@
 
     </style>
 </head>
-<body>
+<body id="all_data" style="display: none">
 <div id="main">
     <h1 style="margin: 0 auto">SITE</h1>
     <p style="margin: 0 auto">info info info</p>
@@ -58,6 +58,9 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     let tg = window.Telegram.WebApp;
+    if (tg.initDataUnsafe.user.id) {
+        document.getElementById("all_data").style.display = "block";
+    }
     let press = document.getElementById('press');
     tg.expand();
 
