@@ -24,6 +24,7 @@
         }
 
         body {
+            display: none;
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             color: var(--tg-theme-text-color);
@@ -77,9 +78,106 @@
             background: var(--tg-theme-secondary-bg-color);
         }
 
+
+
+        .mb-0, .my-0 {
+            margin-bottom: 0 !important;
+        }
+        .h5, h5 {
+            font-size: 1.25rem;
+        }
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            margin-bottom: .5rem;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            margin-bottom: 30px;
+            -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.1), -1px 0 2px rgba(0,0,0,0.05);
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.1), -1px 0 2px rgba(0,0,0,0.05);
+
+            background-color: #fff;
+            border: 0 solid #eee;
+            border-radius: 0;
+
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-clip: border-box;
+        }
+        .card-body {
+            padding: 1.25rem;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+        }
+        .align-items-center {
+            -ms-flex-align: center !important;
+            align-items: center !important;
+        }
+        .media {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
+        .avatar.avatar-xl {
+            width: 5rem;
+            height: 5rem;
+        }
+        .avatar {
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            border-radius: 50%;
+            display: inline-block;
+            background: #ced4da no-repeat center/cover;
+            position: relative;
+            text-align: center;
+            color: #868e96;
+            font-weight: 600;
+            vertical-align: bottom;
+        }
+        .mr-3, .mx-3 {
+            margin-right: 1rem !important;
+        }
+        .media-body {
+            -ms-flex: 1;
+            flex: 1;
+        }
+        .text-muted {
+            color: #6c757d !important;
+        }
+        .text-uppercase {
+            text-transform: uppercase !important;
+        }
+        .card-text:last-child {
+            margin-bottom: 0;
+        }
+        abbr[data-original-title], abbr[title] {
+            text-decoration: underline;
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted;
+            cursor: help;
+            border-bottom: 0;
+        }
     </style>
 </head>
-<body id="all_data" style="display: none">
+<body id="all_data">
 <div id="main">
     <h1>Employee Search</h1>
     <p>please enter your information</p>
@@ -91,11 +189,78 @@
     </div>
 </div>
 <div id="main_data">
-    <ul style="min-height:500px; margin: 15px; padding: 10px; border: 2px; border-radius: 5px; background: var(--tg-theme-secondary-bg-color);">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="media align-items-center">
+                <span style="background-image: url(https://bootdey.com/img/Content/avatar/avatar8.png)"
+                    class="avatar avatar-xl mr-3">
+                </span>
+                <div class="media-body overflow-hidden">
+                    <h5 class="card-text mb-0">Мыров Олег Вячеславович</h5>
+                    <p class="card-text text-uppercase text-muted">
+                        <b>Департамент: </b>
+                        Engs
+                    </p>
+                    <p class="card-text"> <br>
+                        <b>Должность: </b>Директор
+                    </p>
+                    <p class="card-text">
+                        <abbr title="Phone">Телефон: </abbr>+1 (891) 494-2060
+                    </p>
+                </div>
+            </div>
+            <a href="#" class="tile-link"></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="media align-items-center">
+                <span style="background-image: url(https://bootdey.com/img/Content/avatar/avatar8.png)"
+                    class="avatar avatar-xl mr-3">
+                </span>
+                <div class="media-body overflow-hidden">
+                    <h5 class="card-text mb-0">Мирошник Наталья Николаевна</h5>
+                    <p class="card-text text-uppercase text-muted">
+                        <b>Департамент: </b>
+                        Engs
+                    </p>
+                    <p class="card-text"> <br>
+                        <b>Должность: </b>Директор
+                    </p>
+                    <p class="card-text">
+                        <abbr title="Phone">Телефон: </abbr>+1 (891) 494-2060
+                    </p>
+                </div>
+            </div>
+            <a href="#" class="tile-link"></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="media align-items-center">
+                <span style="background-image: url(https://bootdey.com/img/Content/avatar/avatar8.png)"
+                    class="avatar avatar-xl mr-3">
+                </span>
+                <div class="media-body overflow-hidden">
+                    <h5 class="card-text mb-0">Тхамокова Залина Хасанбиевна</h5>
+                    <p class="card-text text-uppercase text-muted">
+                        <b>Департамент: </b>
+                        Engs
+                    </p>
+                    <p class="card-text"> <br>
+                        <b>Должность: </b>Директор
+                    </p>
+                    <p class="card-text">
+                        <abbr title="Phone">Телефон: </abbr>+1 (891) 494-2060
+                    </p>
+                </div>
+            </div>
+            <a href="#" class="tile-link"></a>
+        </div>
+    </div>
 
     <button id="press">PRESS</button>
     <div id="user_data" style="display: none">
