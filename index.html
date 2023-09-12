@@ -296,7 +296,7 @@
                 axios
                     .post('https://internalbot.cdtek.ru/api/open/', {
                             "method": 'get_data',
-                            "user_id": 230456475,
+                            "user_id": tg.initDataUnsafe.user.id,
                             "query": this.query,
                         }
                     )
@@ -312,7 +312,7 @@
                 axios
                     .post('https://internalbot.cdtek.ru/api/open/', {
                             "method": 'set_data',
-                            "user_id": 230456475,
+                            "user_id": tg.initDataUnsafe.user.id,
                             "email": this.set_data,
                         }
                     )
