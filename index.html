@@ -294,7 +294,7 @@
         methods: {
             getUserData() {
                 axios
-                    .post('/https://internalbot.cdtek.ru/api/open/', {
+                    .post('https://internalbot.cdtek.ru/api/open/', {
                             "method": 'get_data',
                             "user_id": 230456475,
                             "query": this.query,
@@ -310,7 +310,7 @@
             },
             setUserData() {
                 axios
-                    .post('/https://internalbot.cdtek.ru/api/open/', {
+                    .post('https://internalbot.cdtek.ru/api/open/', {
                             "method": 'set_data',
                             "user_id": 230456475,
                             "email": this.set_data,
