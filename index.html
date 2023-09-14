@@ -228,9 +228,9 @@
         <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
             <div class="card-body">
                 <div class="media align-items-center">
-                    <img v-show="exo.photo=!''" class="avatar avatar-xl mb-3"
-                         v-bind:src="'data:image/png;base64,'+exo.photo" alt="">
-                    <span v-show="exo.photo===''"
+                    <img  class="avatar avatar-xl mb-3"
+                         v-bind:src="'data:image/png;base64,'+exo.photo" alt="-">
+                    <span
                           style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
                           class="avatar avatar-xl mb-3">
                     </span>
