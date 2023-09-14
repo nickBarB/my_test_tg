@@ -224,10 +224,11 @@
         <h1>КОНТАКТЫ</h1>
         <p></p>
         <div style="width: 100%; display:flex;">
+            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>
             <input type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search" v-model="query" @change="getUserData">
-            <a type="button" id="button-search"><i class="bi bi-search"></i></a>
+            <button type="button" id="button-search"><i class="bi bi-search"></i></button>
         </div>
     </div>
 
