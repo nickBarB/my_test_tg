@@ -150,7 +150,7 @@
             border-radius: 5px;
             /*margin-top: 50px;*/
             height: 40px;
-            width: 160px;
+            /*width: 160px;*/
             font-size: 20px;
             font-style: oblique;
             font-weight: 200;
@@ -244,7 +244,7 @@
 <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
             <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
             <label class="btn btn-filter" for="btn-check"><i class="bi bi-filter"></i></label>
-            <input type="text"
+            <input style="width: 100%" type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search" v-model="query" @change="getUserData">
             <button class="btn btn-filter" type="button" id="button-search"><i class="bi bi-search"></i></button>
