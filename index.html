@@ -1,332 +1,349 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="ru">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta http-equiv="x-ua-compatible" content="ie=edge">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>-->
-<!--    <title>Title</title>-->
-<!--    <style>-->
-<!--        @import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    {% block title %}<title>Title</title>{% endblock %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');
 
-<!--        * {-->
-<!--            margin: 0;-->
-<!--            padding: 0;-->
-<!--            box-sizing: border-box;-->
-<!--        }-->
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!--        h1 {-->
-<!--            margin-top: 30px;-->
-<!--            margin-bottom: 10px;-->
-<!--        }-->
+        h1 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
 
-<!--        p {-->
-<!--            margin: auto;-->
-<!--        }-->
+        p {
+            margin: auto;
+        }
 
-<!--        body {-->
+        body {
 
-<!--            font-family: 'Montserrat', sans-serif;-->
-<!--            font-weight: 200;-->
-<!--            color: var(&#45;&#45;tg-theme-text-color);-->
-<!--            background: var(&#45;&#45;tg-theme-bg-color);-->
-<!--        }-->
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
 
-<!--        #main {-->
-<!--            width: 100%;-->
-<!--            padding: 20px;-->
-<!--            text-align: center;-->
-<!--            position: sticky;-->
-<!--            top: 0;-->
-<!--            background: var(&#45;&#45;tg-theme-bg-color);-->
-<!--            opacity: 0.99;-->
-<!--            z-index: 999;-->
-<!--        }-->
+        #main {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: var(--tg-theme-bg-color);
+            opacity: 0.99;
+            z-index: 999;
+        }
 
-<!--        #main_data {-->
-<!--            width: 100%;-->
-<!--            padding: 20px;-->
-<!--            text-align: center;-->
-<!--        }-->
+        #main_data {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
 
-<!--        input {-->
-<!--            height: 40px;-->
-<!--            border-radius: 5px;-->
-<!--            color: var(&#45;&#45;tg-theme-button-color);-->
-<!--            background: var(&#45;&#45;tg-theme-button-text-color);-->
-<!--            font-size: 20px;-->
-<!--            font-weight: 200;-->
-<!--            margin: 5px;-->
-<!--        }-->
+        input {
+            height: 40px;
+            border-radius: 5px;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+            font-size: 20px;
+            font-weight: 200;
+            margin: 5px;
+        }
 
-<!--        button {-->
-<!--            border: 1px;-->
-<!--            border-color: var(&#45;&#45;tg-theme-secondary-bg-color);-->
-<!--            border-radius: 5px;-->
-<!--            /*margin-top: 50px;*/-->
-<!--            height: 40px;-->
-<!--            width: 160px;-->
-<!--            font-size: 20px;-->
-<!--            font-style: oblique;-->
-<!--            font-weight: 200;-->
-<!--            cursor: pointer;-->
-<!--            transition: all 500ms ease;-->
-<!--            color: var(&#45;&#45;tg-theme-button-color);-->
-<!--            background: var(&#45;&#45;tg-theme-button-text-color);-->
+        button {
+            border: 1px;
+            border-color: var(--tg-theme-secondary-bg-color);
+            border-radius: 5px;
+            /*margin-top: 50px;*/
+            height: 40px;
+            width: 160px;
+            font-size: 20px;
+            font-style: oblique;
+            font-weight: 200;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
 
-<!--        }-->
+        }
 
-<!--        button:hover {-->
-<!--            background: var(&#45;&#45;tg-theme-secondary-bg-color);-->
-<!--        }-->
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
 
-<!--        .mt-1, .my-1 {-->
-<!--            margin-top: .25rem !important;-->
-<!--        }-->
+        .mt-1, .my-1 {
+            margin-top: .25rem !important;
+        }
 
-<!--        .mt-3, .my-3 {-->
-<!--            margin-top: 1rem !important;-->
-<!--        }-->
+        .mt-3, .my-3 {
+            margin-top: 1rem !important;
+        }
 
-<!--        .mb-0, .my-0 {-->
-<!--            margin-bottom: 0 !important;-->
-<!--        }-->
+        .mb-0, .my-0 {
+            margin-bottom: 0 !important;
+        }
 
-<!--        .mb-3, .my-3 {-->
-<!--            margin-bottom: 1rem !important;-->
-<!--        }-->
+        .mb-3, .my-3 {
+            margin-bottom: 1rem !important;
+        }
 
-<!--        .h5, h5 {-->
-<!--            font-size: 1.25rem;-->
-<!--        }-->
+        .h5, h5 {
+            font-size: 1.25rem;
+        }
 
-<!--        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {-->
-<!--            margin-bottom: .5rem;-->
-<!--            font-family: inherit;-->
-<!--            font-weight: 500;-->
-<!--            line-height: 1.2;-->
-<!--            color: inherit;-->
-<!--        }-->
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            margin-bottom: .5rem;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+        }
 
-<!--        h1, h2, h3, h4, h5, h6 {-->
-<!--            margin-top: 0;-->
-<!--            margin-bottom: .5rem;-->
-<!--        }-->
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+        }
 
-<!--        p {-->
-<!--            margin-top: 0;-->
-<!--            margin-bottom: 1rem;-->
-<!--        }-->
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
 
-<!--        .card {-->
-<!--            margin-bottom: 30px;-->
-<!--            -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);-->
-<!--            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);-->
+        .card {
+            margin-bottom: 30px;
+            -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
 
-<!--            background-color: var(&#45;&#45;tg-theme-secondary-bg-color);-->
-<!--            border: 0 solid #eee;-->
-<!--            border-radius: 5px;-->
+            background-color: var(--tg-theme-secondary-bg-color);
+            border: 0 solid #eee;
+            border-radius: 5px;
 
-<!--            position: relative;-->
-<!--            display: -ms-flexbox;-->
-<!--            display: flex;-->
-<!--            -ms-flex-direction: column;-->
-<!--            flex-direction: column;-->
-<!--            min-width: 0;-->
-<!--            word-wrap: break-word;-->
-<!--            background-clip: border-box;-->
-<!--        }-->
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-clip: border-box;
+        }
 
-<!--        .card-body {-->
-<!--            padding: 1.25rem;-->
-<!--            -ms-flex: 1 1 auto;-->
-<!--            flex: 1 1 auto;-->
-<!--        }-->
+        .card-body {
+            padding: 1.25rem;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+        }
 
-<!--        .align-items-center {-->
-<!--            -ms-flex-align: center !important;-->
-<!--            align-items: center !important;-->
-<!--        }-->
+        .align-items-center {
+            -ms-flex-align: center !important;
+            align-items: center !important;
+        }
 
-<!--        .media {-->
-<!--            flex-flow: column;-->
-<!--            display: -ms-flexbox;-->
-<!--            display: flex;-->
-<!--            -ms-flex-align: start;-->
-<!--            align-items: flex-start;-->
-<!--        }-->
+        .media {
+            flex-flow: column;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
 
-<!--        .avatar.avatar-xl {-->
-<!--            width: 5rem;-->
-<!--            height: 5rem;-->
-<!--        }-->
+        .avatar.avatar-xl {
+            width: 5rem;
+            height: 5rem;
+        }
 
-<!--        .avatar {-->
-<!--            width: 2rem;-->
-<!--            height: 2rem;-->
-<!--            line-height: 2rem;-->
-<!--            border-radius: 50%;-->
-<!--            display: inline-block;-->
-<!--            background: #ced4da no-repeat center/cover;-->
-<!--            position: relative;-->
-<!--            text-align: center;-->
-<!--            color: #868e96;-->
-<!--            font-weight: 600;-->
-<!--            vertical-align: bottom;-->
-<!--        }-->
+        .avatar {
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            border-radius: 50%;
+            display: inline-block;
+            background: #ced4da no-repeat center/cover;
+            position: relative;
+            text-align: center;
+            color: #868e96;
+            font-weight: 600;
+            vertical-align: bottom;
+        }
 
-<!--        .mr-3, .mx-3 {-->
-<!--            margin-right: 1rem !important;-->
-<!--        }-->
+        .mr-3, .mx-3 {
+            margin-right: 1rem !important;
+        }
 
-<!--        .media-body {-->
-<!--            -ms-flex: 1;-->
-<!--            flex: 1;-->
-<!--        }-->
+        .media-body {
+            -ms-flex: 1;
+            flex: 1;
+        }
 
-<!--        .text-muted {-->
-<!--            color: var(&#45;&#45;tg-theme-button-color);-->
-<!--        }-->
+        .text-muted {
+            color: var(--tg-theme-button-color);
+        }
 
-<!--        .text-uppercase {-->
-<!--            text-transform: uppercase !important;-->
-<!--        }-->
+        .text-uppercase {
+            text-transform: uppercase !important;
+        }
 
-<!--        .card-text a {-->
-<!--            color: var(&#45;&#45;tg-theme-hint-color);-->
-<!--        }-->
+        .card-text a {
+            color: var(--tg-theme-hint-color);
+        }
 
-<!--        .card-text:last-child {-->
-<!--            margin-bottom: 0;-->
-<!--        }-->
+        .card-text:last-child {
+            margin-bottom: 0;
+        }
 
-<!--        abbr[data-original-title], abbr[title] {-->
-<!--            text-decoration: underline;-->
-<!--            -webkit-text-decoration: underline dotted;-->
-<!--            text-decoration: underline dotted;-->
-<!--            cursor: help;-->
-<!--            border-bottom: 0;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body id="all_data">-->
-<!--<div id="app">-->
-<!--    <div id="main">-->
-<!--        <h1>КОНТАКТЫ</h1>-->
-<!--        <p></p>-->
-<!--        <div style="width: 100%;">-->
-<!--            <input type="text"-->
-<!--                   placeholder="Поиск контактов" aria-label="Recipient's username"-->
-<!--                   aria-describedby="button-search" v-model="query" @change="getUserData">-->
-<!--            <button type="button" id="button-search">Поиск</button>-->
-<!--        </div>-->
-<!--    </div>-->
+        abbr[data-original-title], abbr[title] {
+            text-decoration: underline;
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted;
+            cursor: help;
+            border-bottom: 0;
+        }
+    </style>
+</head>
+<body id="all_data">
+{% verbatim %}
+<div id="app">
+    <div id="main">
+        <h1>КОНТАКТЫ</h1>
+        <p></p>
+        <div style="width: 100%;">
+            <input type="text"
+                   placeholder="Поиск контактов" aria-label="Recipient's username"
+                   aria-describedby="button-search" v-model="query" @change="getUserData">
+            <button type="button" id="button-search">Поиск</button>
+        </div>
+    </div>
 
-<!--    <div id="main_data">-->
-<!--        <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">-->
-<!--            <div class="card-body">-->
-<!--                <div class="media align-items-center">-->
-<!--                <span style="background-image: url(https://img.icons8.com/ios/100/user&#45;&#45;v1.png)"-->
-<!--                      class="avatar avatar-xl mb-3">-->
-<!--                </span>-->
-<!--                    <div class="media-body overflow-hidden">-->
-<!--                        <h5 class="card-text mb-1"> {{ exo.name }} </h5>-->
-<!--                        <p class="card-text text-uppercase text-muted">-->
-<!--                            <b>Департамент: </b> {{ exo.organization }}-->
-<!--                        </p>-->
-<!--                        <p class="card-text">-->
-<!--                            <b>Должность: </b> {{ exo.position }}-->
-<!--                        </p>-->
-<!--                        <p class="card-text">-->
-<!--                            <span title="Phone">Email: </span>-->
-<!--                            <a href="mailto:example@gmail.com">{{ exo.email }}</a>-->
-<!--                        </p>-->
-<!--                        <p class="card-text">-->
-<!--                            <span title="Phone">Телефон: </span>-->
-<!--                            <a href="tel:+18914942060">{{ exo.phone_mobile }}</a>-->
-<!--                        </p>-->
-<!--                        <p class="card-text">-->
-<!--                            <span title="Phone">Телефон ВН: </span>-->
-<!--                            <a href="tel:+18914942060">{{ exo.phone_internal }}</a>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <button type="button" class="mt-3">Подписаться</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<script src="https://telegram.org/js/telegram-web-app.js"></script>-->
-<!--<script>-->
+    <div id="main_data">
+        <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
+            <div class="card-body">
+                <div class="media align-items-center">
+                    <img v-show="exo.photo=!''" class="avatar avatar-xl mb-3"
+                         v-bind:src="'data:image/png;base64,'+exo.photo" alt="">
+                    <span v-show="exo.photo===''"
+                          style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
+                          class="avatar avatar-xl mb-3">
+                    <div class="media-body overflow-hidden">
+                        <h5 class="card-text mb-1"> {{ exo.name }} </h5>
+                        <p v-show="exo.favs==='True'" class="card-text text-uppercase">Вы подписаны</p>
+                        <p class="card-text text-uppercase text-muted">
+                            <b>Департамент: </b> {{ exo.organization }}
+                        </p>
+                        <p class="card-text">
+                            <b>Должность: </b> {{ exo.position }}
+                        </p>
+                        <p class="card-text">
+                            <span title="Phone">Email: </span>
+                            <a v-bind:value="exo.email" href="mailto:exo.email" v-model="set_data">{{ exo.email }}</a>
+                        </p>
+                        <p class="card-text">
+                            <span title="Phone">Телефон: </span>
+                            <a href="tel:{{ exo.phone_mobile }}">{{ exo.phone_mobile }}</a>
+                        </p>
+                        <p class="card-text">
+                            <span title="Phone">Телефон ВН: </span>
+                            <a href="tel:{{ exo.phone_internal }}">{{ exo.phone_internal }}</a>
+                        </p>
+                    </div>
+                </div>
+                <button v-show="exo.favs==='True'" type="button" class="mt-3"
+                        @click="setUserData(exo.email, 0)">
+                    Отписаться
+                </button>
+                <button v-show="exo.favs==='False'" type="button" class="mt-3"
+                        @click="setUserData(exo.email, 1)">
+                    Подписаться
+                </button>
 
-<!--    // let form_data = new FormData();-->
-<!--    // form_data.append("method", "get_data");-->
-<!--    // form_data.append("user_mention", "666");-->
-<!--    // form_data.append("user_id", 666);-->
-<!--    // form_data.append("query", ' ');-->
-
-
-<!--    let tg = window.Telegram.WebApp;-->
-<!--    // if (tg.initDataUnsafe.user.id) {-->
-<!--    //     document.getElementById("all_data").style.display = "block";-->
-<!--    // }-->
-<!--    // let press = document.getElementById('press');-->
-<!--    tg.expand();-->
-
-<!--    // press.addEventListener("click", () => {-->
-<!--    //     document.getElementById("user_data").style.display = "block";-->
-<!--    //     document.getElementById("user").value = "TG USER ID:" + tg.initDataUnsafe.user.id + tg.initDataUnsafe.user.name-->
-<!--    // });-->
-
-<!--    new Vue({-->
-<!--        el: '#app',-->
-<!--        data: {-->
-<!--            query: '',-->
-<!--            u_Data: [],-->
-<!--            // user_id: tg.initDataUnsafe.user.id,-->
-<!--            set_data: ''-->
-<!--        },-->
-<!--        mounted() {-->
-<!--            document.title = 'Report'-->
-<!--            this.getUserData()-->
-<!--        },-->
-<!--        methods: {-->
-<!--            getUserData() {-->
-<!--                axios-->
-<!--                    .post('https://internalbot.cdtek.ru/api/open/', {-->
-<!--                            "method": 'get_data',-->
-<!--                            "user_id": tg.initDataUnsafe.user.id,-->
-<!--                            "query": this.query,-->
-<!--                        }-->
-<!--                    )-->
-<!--                    .then(response => {-->
-<!--                        this.u_Data = response.data-->
-<!--                        console.log(this.u_Data)-->
-<!--                    })-->
-<!--                    .catch(error => {-->
-<!--                        console.log(error)-->
-<!--                    })-->
-<!--            },-->
-<!--            setUserData() {-->
-<!--                axios-->
-<!--                    .post('https://internalbot.cdtek.ru/api/open/', {-->
-<!--                            "method": 'set_data',-->
-<!--                            "user_id": tg.initDataUnsafe.user.id,-->
-<!--                            "email": this.set_data,-->
-<!--                        }-->
-<!--                    )-->
-<!--                    .then(response => {-->
-<!--                        console.log(response.data)-->
-<!--                    })-->
-<!--                    .catch(error => {-->
-<!--                        console.log(error)-->
-<!--                    })-->
-<!--            },-->
-<!--        }-->
-<!--    })-->
+            </div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+    window.onload = function () {
+        // let form_data = new FormData();
+        // form_data.append("method", "get_data");
+        // form_data.append("user_mention", "666");
+        // form_data.append("user_id", 666);
+        // form_data.append("query", ' ');
 
 
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
+        let tg = window.Telegram.WebApp;
+        // if (tg.initDataUnsafe.user.id) {
+        //     document.getElementById("all_data").style.display = "block";
+        // }
+        // let press = document.getElementById('press');
+        tg.expand();
+
+        // press.addEventListener("click", () => {
+        //     document.getElementById("user_data").style.display = "block";
+        //     document.getElementById("user").value = "TG USER ID:" + tg.initDataUnsafe.user.id + tg.initDataUnsafe.user.name
+        // });
+
+        new Vue({
+            el: '#app',
+            data: {
+                query: '',
+                u_Data: [],
+                // user_id: tg.initDataUnsafe.user.id, 230456475
+                set_data: '',
+                url: 'https://internalbot.cdtek.ru/api/open/'
+            },
+            mounted() {
+                document.title = 'Report'
+                this.getUserData()
+            },
+            methods: {
+                getUserData() {
+                    axios
+                        .post(this.url, {
+                                "method": 'get_data',
+                                "user_id": tg.initDataUnsafe.user.id,
+                                "query": this.query,
+                            }
+                        )
+                        .then(response => {
+                            this.u_Data = response.data
+                            console.log(this.u_Data)
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+                },
+                setUserData(set_data, params) {
+                    axios
+                        .post(this.url, {
+                                "method": 'set_data',
+                                "user_id": tg.initDataUnsafe.user.id,
+                                "email": set_data,
+                                "params": params
+                            }
+                        )
+                        .then(response => {
+                            console.log(response.data)
+                            window.location.reload()
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+                },
+            }
+        })
+    }
+
+
+</script>
+</body>
+</html>
