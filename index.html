@@ -242,7 +242,7 @@
     <div id="main">
         <div style="width: 100%; display:flex; align-items: center">
             <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
-            <input type="checkbox" class="btn-check btn-filter" id="btn-check" autocomplete="off" v-model="checked">
+            <input type="checkbox" class="btn-check btn-filter" id="btn-check" autocomplete="off" value=true v-model="checked" >
             <label class="btn btn-filter" for="btn-check"><i class="bi bi-filter">{{ checked }}</i></label>
             <input style="width: 100%"
                    type="text"
@@ -304,7 +304,6 @@
 
     // import {ref} from 'vue'
     window.onload = function () {
-        import {ref} from 'vue'
         // let form_data = new FormData();
         // form_data.append("method", "get_data");
         // form_data.append("user_mention", "666");
@@ -332,7 +331,7 @@
                 // user_id: tg.initDataUnsafe.user.id, 230456475
                 set_data: '',
                 url: 'https://internalbot.cdtek.ru/api/open/',
-                checked: ref(true)
+                checked: false
             },
             mounted() {
                 document.title = 'Report'
