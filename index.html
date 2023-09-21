@@ -142,6 +142,7 @@
         }
 
         .btn-check {
+            color: var(--tg-theme-button-color);
             background: var(--tg-theme-button-text-color);
         }
 
@@ -251,7 +252,7 @@
             <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
             <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true v-model="checked"
                    @change="getUserData()">
-            <label class="btn btn-filter" for="btn-check"><i class="bi bi-filter"></i></label>
+            <label class="btn btn-filter" for="btn-check"><h1><i class="bi bi-filter"></i></h1></label>
             <input style="width: 100%"
                    type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
