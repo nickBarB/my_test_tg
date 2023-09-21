@@ -258,47 +258,6 @@
     </div>
 
     <div id="main_data">
-        <div class="card">
-            <div class="card-body">
-                <div class="media align-items-start">
-                    <div class="d-flex">
-                        <div class="text-start">
-                            <h5 class="card-text"> name </h5>
-                            <p class="card-text text-uppercase">
-                                <b>Департамент: </b> organization
-                            </p></div>
-                        <div>
-                        <span
-                                style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
-                                class="avatar avatar-xl mb-3 ">
-                        </span>
-                        </div>
-                    </div>
-                    <div class="text-start">
-                        <p class="card-text">
-                            <b>Должность: </b> position
-                        </p>
-                        <p class="card-text">
-                            <span title="Phone">Email: </span>
-                            <a href="mailto:exo.email">Email</a>
-                        </p>
-                        <p class="card-text">
-                            <span title="Phone">Телефон: </span>
-                            <a href="tel:.">phone_mobile</a>
-                        </p>
-                        <p class="card-text">
-                            <span title="Phone">Телефон ВН: </span>
-                            <a href="tel:.">phone_internal</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="text-end">
-                    <a type="button" class="mt-3">
-                        <i class="h1 bi bi-star-fill"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
         <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
             <div class="card-body">
                 <div class="media">
@@ -306,7 +265,7 @@
                     <div class="d-flex">
                         <div class="text-start">
                             <h5 class="card-text"> {{ exo.name }} </h5>
-                            <p class="card-text text-uppercase text-muted">
+                            <p class="card-text text-uppercase">
                                 <b>Департамент: </b> {{ exo.organization }}
                             </p>
                         </div>
