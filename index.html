@@ -241,7 +241,7 @@
 <div id="app">
     <div id="main">
         <div style="width: 100%; display:flex; align-items: center">
-<!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
+            <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
             <input type="checkbox" class="btn-check btn-filter" id="btn-check" autocomplete="off">
             <label class="btn btn-filter" for="btn-check"><i class="bi bi-filter"></i></label>
             <input style="width: 100%"
@@ -256,6 +256,8 @@
         <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
             <div class="card-body">
                 <div class="media align-items-center">
+                    <input type="checkbox" id="checkbox" v-model="checked"/>
+                    <label for="checkbox">{{ checked }}</label>
                     <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
                          v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
                     <span v-show="(exo.photo).length < 10"
@@ -301,6 +303,10 @@
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
+
+    import {ref} from 'vue'
+    const checked = ref(true)
+
     window.onload = function () {
         // let form_data = new FormData();
         // form_data.append("method", "get_data");
