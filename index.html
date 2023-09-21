@@ -141,12 +141,27 @@
             background: var(--tg-theme-button-text-color);
         }
 
-        .btn-filter:hover {
+
+        .btn-search-all {
+            border: 1px;
+            border-color: var(--tg-theme-secondary-bg-color);
+            border-radius: 5px;
+            /*margin-top: 50px;*/
+            height: 40px;
+            /*width: 160px;*/
+            font-size: 20px;
+            font-style: oblique;
+            font-weight: 200;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+
+        .btn-search-all:hover {
             background: var(--tg-theme-secondary-bg-color);
         }
-        .btn-check {
-            background: var(--tg-theme-secondary-bg-color);
-        }
+
 
         .card-body {
             padding: 1.25rem;
@@ -226,13 +241,14 @@
     <div id="main">
         <div style="width: 100%; display:flex; align-items: center">
             <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
-            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true v-model="checked"  @change="getUserData()">
+            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true v-model="checked"
+                   @change="getUserData()">
             <label class="btn btn-filter" for="btn-check"><i class="bi bi-filter"></i></label>
             <input style="width: 100%"
                    type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search" v-model="query" @change="getUserData()">
-            <button class="btn btn-filter" type="button" id="button-search"><i class="bi bi-search"></i></button>
+            <button class="btn btn-search-all" type="button" id="button-search"><i class="bi bi-search"></i></button>
         </div>
     </div>
 
@@ -324,7 +340,7 @@
             methods: {
                 getUserData() {
                     let par = ''
-                    if (this.checked===true)
+                    if (this.checked === true)
                         par = 'get_data_favs'
                     else
                         par = 'get_data'
