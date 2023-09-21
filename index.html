@@ -258,6 +258,7 @@
                 <div class="media align-items-center">
                     <input type="checkbox" id="checkbox" v-model="checked"/>
                     <label for="checkbox">{{ checked }}</label>
+
                     <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
                          v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
                     <span v-show="(exo.photo).length < 10"
@@ -305,8 +306,6 @@
 <script>
 
     import {ref} from 'vue'
-    const checked = ref(true)
-
     window.onload = function () {
         // let form_data = new FormData();
         // form_data.append("method", "get_data");
@@ -334,7 +333,8 @@
                 u_Data: [],
                 // user_id: tg.initDataUnsafe.user.id, 230456475
                 set_data: '',
-                url: 'https://internalbot.cdtek.ru/api/open/'
+                url: 'https://internalbot.cdtek.ru/api/open/',
+                checked: ref(true)
             },
             mounted() {
                 document.title = 'Report'
