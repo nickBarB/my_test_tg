@@ -211,10 +211,10 @@
             margin-right: 1rem !important;
         }
 
-        .media-body {
-            -ms-flex: 1;
-            flex: 1;
-        }
+        /*.media-body {*/
+        /*    -ms-flex: 1;*/
+        /*    flex: 1;*/
+        /*}*/
 
         .text-muted {
             color: var(--tg-theme-button-color);
@@ -267,7 +267,7 @@
                     <div class="d-flex">
                         <div class="text-start">
                             <h5 class="card-text"> name </h5>
-                            <p class="card-text text-uppercase text-muted">
+                            <p class="card-text text-uppercase">
                                 <b>Департамент: </b> organization
                             </p></div>
                         <div>
@@ -278,7 +278,6 @@
                         </div>
                     </div>
                     <div class="media-body overflow-hidden">
-                        <p class="card-text text-uppercase">Вы подписаны</p>
                         <p class="card-text">
                             <b>Должность: </b> position
                         </p>
@@ -316,7 +315,7 @@
                               class="avatar avatar-xl mb-3">
                         </span>
                     </div>
-                    <div class="media-body overflow-hidden">
+                    <div class="media-body overflow-hidden text-start">
                         <p v-show="exo.favs==='True'" class="card-text text-uppercase">Вы подписаны</p>
                         <p class="card-text">
                             <b>Должность: </b> {{ exo.position }}
