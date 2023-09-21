@@ -341,9 +341,9 @@
                 getUserData(params) {
                     let par = ''
                     if (params===true)
-                        par = 'get_data'
-                    else
                         par = 'get_data_favs'
+                    else
+                        par = 'get_data'
                     axios
                         .post(this.url, {
                                 "method": par,
