@@ -264,6 +264,10 @@
         <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
             <div class="card-body">
                 <div class="media align-items-center">
+                    <h5 class="card-text mb-1"> {{ exo.name }} </h5>
+                    <p class="card-text text-uppercase text-muted">
+                        <b>Департамент: </b> {{ exo.organization }}
+                    </p>
                     <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
                          v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
                     <span v-show="(exo.photo).length < 10"
@@ -271,11 +275,7 @@
                           class="avatar avatar-xl mb-3">
                     </span>
                     <div class="media-body overflow-hidden">
-                        <h5 class="card-text mb-1"> {{ exo.name }} </h5>
                         <p v-show="exo.favs==='True'" class="card-text text-uppercase">Вы подписаны</p>
-                        <p class="card-text text-uppercase text-muted">
-                            <b>Департамент: </b> {{ exo.organization }}
-                        </p>
                         <p class="card-text">
                             <b>Должность: </b> {{ exo.position }}
                         </p>
