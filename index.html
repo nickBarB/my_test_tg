@@ -224,12 +224,12 @@
         <div style="width: 100%; display:flex; align-items: center">
             <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
             <input type="checkbox" class="btn-check btn-filter" id="btn-check" autocomplete="off" value=true v-model="checked"  @change="getUserData()">
-            <label class="btn btn-filter" for="btn-check"><i class="bi bi-filter"></i></label>
+            <label class="btn btn-filter font-weight-bold" for="btn-check"><i class="bi bi-filter"></i></label>
             <input style="width: 100%"
                    type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search" v-model="query" @change="getUserData()">
-            <button class="btn btn-filter" type="button" id="button-search"><i class="bi bi-search"></i></button>
+            <button class="btn btn-filter font-weight-bold" type="button" id="button-search"><i class="bi bi-search"></i></button>
         </div>
     </div>
 
