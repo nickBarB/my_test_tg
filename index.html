@@ -141,16 +141,6 @@
             background: var(--tg-theme-button-text-color);
         }
 
-        .btn-check {
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
-        }
-
-        .btn-check:checked {
-            background: var(--tg-theme-secondary-bg-color);
-        }
-
-
         .btn-search-all {
             border: 1px;
             border-color: var(--tg-theme-secondary-bg-color);
@@ -250,14 +240,15 @@
     <div id="main">
         <div style="width: 100%; display:flex; align-items: center">
             <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
-            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true v-model="checked"
+            <input type="checkbox" class="btn-check btn-filter" id="btn-check" autocomplete="off" value=true
+                   v-model="checked"
                    @change="getUserData()">
-            <label class="btn btn-filter" for="btn-check"><h1><i class="bi bi-filter"></i></h1></label>
+            <label class="btn btn-filter" for="btn-check"><i class="h1 bi bi-filter"></i></label>
             <input style="width: 100%"
                    type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search" v-model="query" @change="getUserData()">
-            <button class="btn btn-search-all" type="button" id="button-search"><i class="bi bi-search"></i></button>
+            <button class="btn btn-search-all" type="button" id="button-search"><i class="h1 bi bi-search"></i></button>
         </div>
     </div>
 
