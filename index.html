@@ -302,20 +302,25 @@
         <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
             <div class="card-body">
                 <div class="media">
-                    <h5 class="card-text"> {{ exo.name }} </h5>
-                    <p class="card-text text-uppercase text-muted">
-                        <b>Департамент: </b> {{ exo.organization }}
-                    </p>
-                    <div>
-                        <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
-                             v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
-                        <span v-show="(exo.photo).length < 10"
-                              style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
-                              class="avatar avatar-xl mb-3">
+
+                    <div class="d-flex">
+                        <div class="text-start">
+                            <h5 class="card-text"> {{ exo.name }} </h5>
+                            <p class="card-text text-uppercase text-muted">
+                                <b>Департамент: </b> {{ exo.organization }}
+                            </p>
+                        </div>
+                        <div>
+                            <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
+                                 v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
+                            <span v-show="(exo.photo).length < 10"
+                                  style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
+                                  class="avatar avatar-xl mb-3">
                         </span>
+                        </div>
                     </div>
+
                     <div class="media-body overflow-hidden text-start">
-                        <p v-show="exo.favs==='True'" class="card-text text-uppercase">Вы подписаны</p>
                         <p class="card-text">
                             <b>Должность: </b> {{ exo.position }}
                         </p>
@@ -333,7 +338,6 @@
                         </p>
                     </div>
                 </div>
-
                 <div class="text-end">
                     <a v-show="exo.favs==='True'" type="button" class="mt-3"
                        @click="setUserData(exo.email, 0)">
