@@ -247,7 +247,7 @@
             <input style="width: 100%"
                    type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
-                   aria-describedby="button-search" v-model="query" @change="getUserData">
+                   aria-describedby="button-search" v-model="query" @change="getUserData(checked)">
             <button class="btn btn-filter" type="button" id="button-search"><i class="bi bi-search"></i></button>
         </div>
     </div>
@@ -335,13 +335,18 @@
             },
             mounted() {
                 document.title = 'Report'
-                this.getUserData()
+                this.getUserData(false)
             },
             methods: {
-                getUserData() {
+                getUserData(params) {
+                    let par = ''
+                    if (params===true)
+                        par = 'get_data'
+                    else
+                        par = 'get_data_favs'
                     axios
                         .post(this.url, {
-                                "method": 'get_data',
+                                "method": par,
                                 "user_id": tg.initDataUnsafe.user.id,
                                 "query": this.query,
                             }
