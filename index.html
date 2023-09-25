@@ -135,9 +135,9 @@
         }
 
         .btn-filter {
-            border: 1px;
-            border-color: var(--tg-theme-secondary-bg-color);
-            border-radius: 5px;
+            border: unset;
+            /*border-color: var(--tg-theme-secondary-bg-color);*/
+            /*border-radius: 5px;*/
             /*margin-top: 50px;*/
             height: 40px;
             /*width: 160px;*/
@@ -145,7 +145,7 @@
             font-style: oblique;
             font-weight: 200;
             cursor: pointer;
-            transition: all 500ms ease;
+            /*transition: all 500ms ease;*/
             color: var(--tg-theme-button-color);
             background: var(--tg-theme-button-text-color);
         }
@@ -245,7 +245,7 @@
     <div id="main">
         <div style="width: 100%; display:flex; align-items: center">
             <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
-            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true
+            <input type="checkbox" class="btn-filter btn-check" id="btn-check" autocomplete="off" value=true
                    v-model="checked"
                    @change="getUserData()">
             <label class="btn" for="btn-check"><i class="h1 bi bi-star"></i></label>
