@@ -134,7 +134,7 @@
             background-clip: border-box;
         }
 
-        .btn-filter {
+        .btn-star-favs {
             border: unset;
             /*border-color: var(--tg-theme-secondary-bg-color);*/
             /*border-radius: 5px;*/
@@ -142,12 +142,12 @@
             height: 40px;
             /*width: 160px;*/
             font-size: 20px;
-            font-style: oblique;
+            /*font-style: oblique;*/
             font-weight: 200;
-            cursor: pointer;
+            /*cursor: pointer;*/
             /*transition: all 500ms ease;*/
             color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
+            /*background: var(--tg-theme-button-text-color);*/
         }
 
         .btn-search-all {
@@ -248,7 +248,7 @@
             <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true
                    v-model="checked"
                    @change="getUserData()">
-            <label class="btn btn-filter" for="btn-check"><i class="h1 bi bi-star-fill"></i></label>
+            <label class="btn btn-star-favs" for="btn-check"><i class="h1 bi bi-star-fill"></i></label>
             <input style="width: 100%"
                    type="text"
                    placeholder="Поиск контактов" aria-label="Recipient's username"
