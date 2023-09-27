@@ -155,6 +155,7 @@
             border: 1px;
             border-color: var(--tg-theme-secondary-bg-color);
             border-radius: 5px;
+
             /*margin-top: 50px;*/
             height: 40px;
             /*width: 160px;*/
@@ -276,11 +277,12 @@
                 <i v-show="checked" class="h1 bi bi-star-fill"></i>
             </label>
 
-            <input style="width: 100%"
+            <input class="rounded-start rounded-2"
+                   style="width: 100%"
                    type="text"
                    placeholder="  Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search" v-model="query" @change="getUserData()">
-            <button class="btn-search-all" type="button" id="button-search"><i class="h1 bi bi-search"></i>
+            <button class="rounded-end rounded-2" type="button" id="button-search"><i class="h1 bi bi-search"></i>
             </button>
 
         </div>
@@ -290,7 +292,6 @@
         <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
             <div class="card-body">
                 <div class="media">
-
                     <div class="d-flex">
                         <div class="text-start">
                             <h5 class="card-text"> {{ exo.name }} </h5>
@@ -307,7 +308,6 @@
                         </span>
                         </div>
                     </div>
-
                     <div class="media-body overflow-hidden text-start">
                         <p class="card-text">
                             <b>Должность: </b> {{ exo.position }}
