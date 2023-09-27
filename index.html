@@ -266,13 +266,6 @@
                 </div>
             </div>
         </div>
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example"
-                   aria-describedby="btnGroupAddon2">
-            <div class="input-group-append">
-                <div class="input-group-text" id="btnGroupAddon2"><i class="h1 bi bi-search"></i></div>
-            </div>
-        </div>
         <div style="width: 100%; display:flex; align-items: center">
             <!--            <button type="button" id="button-favs"><i class="bi bi-filter"></i></button>-->
             <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true
@@ -282,11 +275,15 @@
                 <i v-show="!checked" class="h1 bi bi-star"></i>
                 <i v-show="checked" class="h1 bi bi-star-fill"></i>
             </label>
-            <input style="width: 100%"
-                   type="text"
-                   placeholder="  Поиск контактов" aria-label="Recipient's username"
-                   aria-describedby="button-search" v-model="query" @change="getUserData()">
-            <button class="btn btn-search-all" type="button" id="button-search"><i class="h1 bi bi-search"></i></button>
+            <div class="input-group">
+                <input class="form-control"
+                       style="width: 100%"
+                       type="text"
+                       placeholder="  Поиск контактов" aria-label="Recipient's username"
+                       aria-describedby="button-search" v-model="query" @change="getUserData()">
+                <button class="btn-search-all" type="button" id="button-search"><i class="h1 bi bi-search"></i>
+                </button>
+            </div>
         </div>
     </div>
 
