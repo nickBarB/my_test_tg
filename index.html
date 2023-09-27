@@ -149,6 +149,7 @@
             color: var(--tg-theme-button-color);
             /*background: var(--tg-theme-button-text-color);*/
         }
+
         .btn-star-favs:hover {
             color: var(--tg-theme-button-color);
         }
@@ -257,6 +258,34 @@
                    placeholder="  Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search" v-model="query" @change="getUserData()">
             <button class="btn btn-search-all" type="button" id="button-search"><i class="h1 bi bi-search"></i></button>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="d-flex">
+                        <div class="text-start">
+                            <h5 class="card-text"> Пользователь </h5>
+                        </div>
+                        <div>
+                            <span style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
+                                  class="avatar avatar-xl mb-3">
+                        </span>
+                        </div>
+                    </div>
+
+                    <div class="media-body overflow-hidden text-start">
+                        <p class="card-text">
+                            <b>Персональная информация: - - - -</b>
+                        </p>
+                        <p class="card-text">
+                            <b>Дни отпуска: - - - -</b>
+                        </p>
+                        <p class="card-text">
+                            <b>Задачи: - - - -</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
