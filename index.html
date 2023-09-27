@@ -245,7 +245,7 @@
             <input type="checkbox" class="btn-check" id="btn-checks" autocomplete="off" value=true
                    v-model="checked"
                    @change="getUserData()">
-            <label class="btn-star-favs" for="btn-checks">
+            <label class="p-1 ml-2" for="btn-checks">
                 <i v-show="!checked" class="h1 bi bi-star"></i>
                 <i v-show="checked" class="h1 bi bi-star-fill"></i>
             </label>
@@ -256,14 +256,6 @@
             </div>
         </div>
         <div class="input-group" style="width: 100%; display:flex; align-items: center">
-            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true
-                   v-model="checked"
-                   @change="getUserData()">
-            <label class="btn-star-favs" for="btn-check">
-                <i v-show="!checked" class="h1 bi bi-star"></i>
-                <i v-show="checked" class="h1 bi bi-star-fill"></i>
-            </label>
-
 
             <input class="form-control rounded-start rounded-2"
                    style="width: 100%"
