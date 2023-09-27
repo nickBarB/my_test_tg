@@ -276,13 +276,12 @@
                 <i v-show="checked" class="h1 bi bi-star-fill"></i>
             </label>
 
-                <input class="form-control"
-                       style="width: 100%"
-                       type="text"
-                       placeholder="  Поиск контактов" aria-label="Recipient's username"
-                       aria-describedby="button-search" v-model="query" @change="getUserData()">
-                <button class="btn-search-all" type="button" id="button-search"><i class="h1 bi bi-search"></i>
-                </button>
+            <input style="width: 100%"
+                   type="text"
+                   placeholder="  Поиск контактов" aria-label="Recipient's username"
+                   aria-describedby="button-search" v-model="query" @change="getUserData()">
+            <button class="btn-search-all" type="button" id="button-search"><i class="h1 bi bi-search"></i>
+            </button>
 
         </div>
     </div>
