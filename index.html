@@ -58,13 +58,8 @@
         }
 
         input {
-            height: 40px;
-            border-radius: 5px;
             color: var(--tg-theme-button-color);
             background: var(--tg-theme-button-text-color);
-            font-size: 20px;
-            font-weight: 200;
-            margin: 5px;
         }
 
 
@@ -134,7 +129,7 @@
             background-clip: border-box;
         }
 
-        .btn-star-favs {
+        .star-favs {
             border: unset;
             /*border-color: var(--tg-theme-secondary-bg-color);*/
             /*border-radius: 5px;*/
@@ -149,27 +144,6 @@
             /*transition: all 500ms ease;*/
             color: var(--tg-theme-button-text-color);
             /*background: var(--tg-theme-button-text-color);*/
-        }
-
-        .btn-search-all {
-            border: 1px;
-            border-color: var(--tg-theme-secondary-bg-color);
-            border-radius: 5px;
-
-            /*margin-top: 50px;*/
-            height: 40px;
-            /*width: 160px;*/
-            font-size: 20px;
-            font-style: oblique;
-            font-weight: 200;
-            cursor: pointer;
-            transition: all 500ms ease;
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
-        }
-
-        .btn-search-all:hover {
-            background: var(--tg-theme-secondary-bg-color);
         }
 
 
@@ -267,16 +241,23 @@
                 </div>
             </div>
         </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+                   aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
+        </div>
         <div class="input-group" style="width: 100%; display:flex; align-items: center">
 
 
-                <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true
-                       v-model="checked"
-                       @change="getUserData()">
-                <label class="btn-star-favs" for="btn-check">
-                    <i v-show="!checked" class="h1 bi bi-star"></i>
-                    <i v-show="checked" class="h1 bi bi-star-fill"></i>
-                </label>
+            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true
+                   v-model="checked"
+                   @change="getUserData()">
+            <label class="btn-star-favs" for="btn-check">
+                <i v-show="!checked" class="h1 bi bi-star"></i>
+                <i v-show="checked" class="h1 bi bi-star-fill"></i>
+            </label>
 
 
             <input class="form-control rounded-start rounded-2"
