@@ -249,22 +249,13 @@
                 <i v-show="!checked" class="h1 bi bi-star"></i>
                 <i v-show="checked" class="h1 bi bi-star-fill"></i>
             </label>
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-                   aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">@example.com</span>
-            </div>
-        </div>
-        <div class="input-group" style="width: 100%; display:flex; align-items: center">
-
-            <input class="form-control rounded-start rounded-2"
-                   style="width: 100%"
-                   type="text"
+            <input type="text" class="form-control rounded-start rounded-2"
                    placeholder="  Поиск контактов" aria-label="Recipient's username"
-                   aria-describedby="button-search" v-model="query" @change="getUserData()">
-            <button class="btn rounded-end rounded-2" type="button" id="button-search"><i class="h1 bi bi-search"></i>
-            </button>
-
+                   aria-describedby="button-search"
+                   v-model="query" @change="getUserData()">
+            <div class="input-group-append">
+                <span class="input-group-text" id="button-search"><i class="h1 bi bi-search"></i>></span>
+            </div>
         </div>
     </div>
 
