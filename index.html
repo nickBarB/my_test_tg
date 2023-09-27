@@ -245,17 +245,14 @@
             <input type="checkbox" class="btn-check" id="btn-checks" autocomplete="off" value=true
                    v-model="checked"
                    @change="getUserData()">
-            <label class="p-1 ml-2" for="btn-checks">
+            <label class="p-1 m-2" for="btn-checks">
                 <i v-show="!checked" class="h1 bi bi-star"></i>
                 <i v-show="checked" class="h1 bi bi-star-fill"></i>
             </label>
-            <input type="text" class="form-control rounded-start rounded-2"
+            <input type="text" class="form-control rounded-2"
                    placeholder="  Поиск контактов" aria-label="Recipient's username"
                    aria-describedby="button-search"
                    v-model="query" @change="getUserData()">
-            <div class="input-group-append">
-                <button class="input-group-text" id="button-search"><i class="h1 bi bi-search"></i></button>
-            </div>
         </div>
     </div>
 
