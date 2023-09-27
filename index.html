@@ -142,7 +142,7 @@
             height: 40px;
             /*width: 160px;*/
             font-size: 20px;
-            /*font-style: oblique;*/
+            font-style: oblique;
             font-weight: 200;
             cursor: pointer;
             /*transition: all 500ms ease;*/
@@ -270,7 +270,7 @@
             <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off" value=true
                    v-model="checked"
                    @change="getUserData()">
-            <label class="btn-star-favs" for="btn-check">
+            <label class="m-auto btn-star-favs" for="btn-check">
                 <i v-show="!checked" class="h1 bi bi-star"></i>
                 <i v-show="checked" class="h1 bi bi-star-fill"></i>
             </label>
