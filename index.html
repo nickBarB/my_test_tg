@@ -51,6 +51,13 @@
             z-index: 999;
         }
 
+        #nav-tabs {
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+        }
+
         #main_data {
             width: 100%;
             padding: 20px;
@@ -224,11 +231,11 @@
 <body id="all_data">
 
 <div id="app">
-    <div class="text-center">
+    <div id="nav-tabs" class="text-center">
         <input type="checkbox" class="btn-check" id="aria-link" autocomplete="off" value=true
                v-model="aria_link"
                @change="getUserData()">
-        <label class="nav nav-tabs nav-justified mx-4" for="aria-link">
+        <label class="nav nav-tabs nav-justified" for="aria-link">
             <div class="nav-item d-flex align-items-center ">
                 <i v-show="!aria_link" class="nav-link active h1 bi bi-person-lines-fill">Профиль</i>
                 <i v-show="!aria_link" class="nav-link h1 text-muted bi bi-people-fill">Контакты</i>
