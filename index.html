@@ -221,9 +221,9 @@
     <input type="checkbox" class="btn-check" id="aria-link" autocomplete="off" value=true
            v-model="aria_link"
            @change="getUserData()">
-    <label class="p-1 mx-3" for="aria-link">
-        <i v-show="!aria_link" class="h1 bi bi-people-fill"></i>
-        <i v-show="aria_link" class="h1 bi bi-person-lines-fill"></i>
+    <label class="p-1 mx-3 text-center" for="aria-link">
+        <i v-show="!aria_link" class="h1 bi bi-people-fill">Просмотреть контакты</i>/
+        <i v-show="aria_link" class="h1 bi bi-person-lines-fill">Просмотреть Профиль</i>
     </label>
     <div v-show="!aria_link">
         <div class="card mb-2">
