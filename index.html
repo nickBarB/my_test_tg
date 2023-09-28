@@ -218,103 +218,105 @@
 <body id="all_data">
 
 <div id="app">
-    <input type="checkbox" class="btn-check" id="aria-link" autocomplete="off" value=true
-           v-model="aria_link"
-           @change="getUserData()">
-    <label class="p-1 mx-3 text-center" for="aria-link">
-        <i v-show="!aria_link" class="h1 bi bi-people-fill">Контакты</i>
-        <i v-show="aria_link" class="h1 bi bi-person-lines-fill">Профиль</i>
-    </label>
-    <div v-show="!aria_link">
-        <div class="card mb-2">
-            <div class="card-body">
-                <div class="media">
-                    <div class="d-flex">
-                        <div class="text-start">
-                            <h5 class="card-text"> Пользователь: - - - </h5>
-                        </div>
-                    </div>
-                    <div class="media-body overflow-hidden text-start">
-                        <p class="card-text">
-                            <b>Персональная информация: - - - -</b>
-                        </p>
-                        <p class="card-text">
-                            <b>Дни отпуска: - - - -</b>
-                        </p>
-                        <p class="card-text">
-                            <b>Задачи: - - - -</b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div v-show="aria_link">
-        <div id="main">
-            <div class="input-group">
-                <input type="checkbox" class="btn-check" id="btn-checks" autocomplete="off" value=true
-                       v-model="checked"
-                       @change="getUserData()">
-                <label class="p-1 mx-3" for="btn-checks">
-                    <i v-show="!checked" class="h1 bi bi-star"></i>
-                    <i v-show="checked" class="h1 bi bi-star-fill"></i>
-                </label>
-                <input type="text" class="form-control rounded-2"
-                       placeholder="  Поиск контактов        🔍" aria-label="Recipient's username"
-                       aria-describedby="button-search"
-                       v-model="query" @change="getUserData()">
-            </div>
-        </div>
-        <div id="main_data">
-            <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
+    <div class="text-center">
+        <input type="checkbox" class="btn-check" id="aria-link" autocomplete="off" value=true
+               v-model="aria_link"
+               @change="getUserData()">
+        <label class="p-1 mx-3" for="aria-link">
+            <i v-show="!aria_link" class="h1 bi bi-people-fill">Контакты</i>
+            <i v-show="aria_link" class="h1 bi bi-person-lines-fill">Профиль</i>
+        </label>
+        <div v-show="!aria_link">
+            <div class="card mb-2">
                 <div class="card-body">
                     <div class="media">
                         <div class="d-flex">
                             <div class="text-start">
-                                <h5 class="card-text"> {{ exo.name }} </h5>
-                                <p class="card-text text-uppercase">
-                                    <b>Департамент: </b> {{ exo.organization }}
-                                </p>
-                            </div>
-                            <div>
-                                <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
-                                     v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
-                                <span v-show="(exo.photo).length < 10"
-                                      style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
-                                      class="avatar avatar-xl mb-3">
-                        </span>
+                                <h5 class="card-text"> Пользователь: - - - </h5>
                             </div>
                         </div>
                         <div class="media-body overflow-hidden text-start">
                             <p class="card-text">
-                                <b>Должность: </b> {{ exo.position }}
+                                <b>Персональная информация: - - - -</b>
                             </p>
                             <p class="card-text">
-                                <span title="Phone">Email: </span>
-                                <a v-bind:value="exo.email" href="mailto:exo.email" v-model="set_data">{{ exo.email
-                                    }}</a>
+                                <b>Дни отпуска: - - - -</b>
                             </p>
                             <p class="card-text">
-                                <span title="Phone">Телефон: </span>
-                                <a href="tel:{{ exo.phone_mobile }}">{{ exo.phone_mobile }}</a>
-                            </p>
-                            <p class="card-text">
-                                <span title="Phone">Телефон ВН: </span>
-                                <a href="tel:{{ exo.phone_internal }}">{{ exo.phone_internal }}</a>
+                                <b>Задачи: - - - -</b>
                             </p>
                         </div>
                     </div>
-                    <div class="text-end">
-                        <a v-show="exo.favs==='True'" type="button" class="mt-3"
-                           @click="setUserData(exo.email, 0)">
-                            <i class="h1 bi bi-star-fill"></i>
-                        </a>
-                        <a v-show="exo.favs==='False'" type="button" class="mt-3"
-                           @click="setUserData(exo.email, 1)">
-                            <i class="h1 bi bi-star"></i>
-                        </a>
-                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-show="aria_link">
+            <div id="main">
+                <div class="input-group">
+                    <input type="checkbox" class="btn-check" id="btn-checks" autocomplete="off" value=true
+                           v-model="checked"
+                           @change="getUserData()">
+                    <label class="p-1 mx-3" for="btn-checks">
+                        <i v-show="!checked" class="h1 bi bi-star"></i>
+                        <i v-show="checked" class="h1 bi bi-star-fill"></i>
+                    </label>
+                    <input type="text" class="form-control rounded-2"
+                           placeholder="  Поиск контактов        🔍" aria-label="Recipient's username"
+                           aria-describedby="button-search"
+                           v-model="query" @change="getUserData()">
+                </div>
+            </div>
+            <div id="main_data">
+                <div class="card" v-for="exo in u_Data" v-bind:value="exo.name">
+                    <div class="card-body">
+                        <div class="media">
+                            <div class="d-flex">
+                                <div class="text-start">
+                                    <h5 class="card-text"> {{ exo.name }} </h5>
+                                    <p class="card-text text-uppercase">
+                                        <b>Департамент: </b> {{ exo.organization }}
+                                    </p>
+                                </div>
+                                <div>
+                                    <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
+                                         v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
+                                    <span v-show="(exo.photo).length < 10"
+                                          style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
+                                          class="avatar avatar-xl mb-3">
+                        </span>
+                                </div>
+                            </div>
+                            <div class="media-body overflow-hidden text-start">
+                                <p class="card-text">
+                                    <b>Должность: </b> {{ exo.position }}
+                                </p>
+                                <p class="card-text">
+                                    <span title="Phone">Email: </span>
+                                    <a v-bind:value="exo.email" href="mailto:exo.email" v-model="set_data">{{ exo.email
+                                        }}</a>
+                                </p>
+                                <p class="card-text">
+                                    <span title="Phone">Телефон: </span>
+                                    <a href="tel:{{ exo.phone_mobile }}">{{ exo.phone_mobile }}</a>
+                                </p>
+                                <p class="card-text">
+                                    <span title="Phone">Телефон ВН: </span>
+                                    <a href="tel:{{ exo.phone_internal }}">{{ exo.phone_internal }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a v-show="exo.favs==='True'" type="button" class="mt-3"
+                               @click="setUserData(exo.email, 0)">
+                                <i class="h1 bi bi-star-fill"></i>
+                            </a>
+                            <a v-show="exo.favs==='False'" type="button" class="mt-3"
+                               @click="setUserData(exo.email, 1)">
+                                <i class="h1 bi bi-star"></i>
+                            </a>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
