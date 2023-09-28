@@ -229,13 +229,13 @@
                v-model="aria_link"
                @change="getUserData()">
         <label class="nav nav-tabs p-1 mx-3" for="aria-link">
-            <div class="d-flex align-items-center">
-                <i v-show="!aria_link" class="nav-link active h1 bi bi-person-lines-fill">    Профиль</i>
-                <i v-show="!aria_link" class="nav-link h1 text-muted bi bi-people-fill">    Контакты</i>
+            <div class="nav-item d-flex align-items-center p-1 m-1">
+                <i v-show="!aria_link" class="nav-link active h1 bi bi-person-lines-fill p-1 m-1">Профиль</i>
+                <i v-show="!aria_link" class="nav-link h1 text-muted bi bi-people-fill p-1 m-1">Контакты</i>
             </div>
-            <div class="d-flex align-items-center">
-                <i v-show="aria_link" class="nav-link h1 text-muted bi bi-person-lines-fill">Профиль</i>
-                <i v-show="aria_link" class="nav-link active h1 bi bi-people-fill">Контакты</i>
+            <div class="nav-item d-flex align-items-center p-1 m-1">
+                <i v-show="aria_link" class="nav-link h1 text-muted bi bi-person-lines-fill p-1 m-1 ">Профиль</i>
+                <i v-show="aria_link" class="nav-link active h1 bi bi-people-fill p-1 m-1">Контакты</i>
             </div>
         </label>
     </div>
