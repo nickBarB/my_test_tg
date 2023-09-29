@@ -246,7 +246,7 @@
         </label>
     </div>
     <div v-show="!aria_link" id="main_card">
-        <div class="card">
+        <div class="card" v-for="user_one in user_info" v-bind:value="user_one.name">
             <div class="card-body">
                 <div class="media">
                     <div class="d-flex">
@@ -264,7 +264,7 @@
                     </div>
                     <div class="media-body overflow-hidden text-start">
                         <p class="card-text">
-                            <b>Должность: </b> Работник
+                            <b>Должность: </b> Работник {{ user_one.name }}
                         </p>
                         <p class="card-text">
                             <span title="Phone">Email: </span>
@@ -378,11 +378,13 @@
                 set_data: '',
                 url: 'https://internalbot.cdtek.ru/api/open/',
                 checked: false,
-                aria_link: false
+                aria_link: false,
+                user_info: []
             },
             mounted() {
                 document.title = 'Report'
                 this.getUserData()
+                this.getUserInfo()
             },
             methods: {
                 getUserData() {
@@ -423,6 +425,21 @@
                         .catch(error => {
                             console.log(error)
                         })
+                },
+                getUserInfo() {
+                    if (this.aria_link === false)
+                        axios
+                            .post(this.url, {
+                                    "method": 'user_one_info',
+                                    "user_id": tg.initDataUnsafe.user.id,
+                                }
+                            )
+                            .then(response => {
+                                this.user_info = response.data
+                            })
+                            .catch(error => {
+                                console.log(error)
+                            })
                 },
             }
         })
