@@ -251,9 +251,9 @@
                 <div class="media">
                     <div class="d-flex">
                         <div class="text-start">
-                            <h5 class="card-text"> Пользователь Пользаков </h5>
+                            <h5 class="card-text"> {{ user_one.name }} </h5>
                             <p class="card-text text-uppercase">
-                                <b>Департамент: </b> IT
+                                <b>Департамент: </b> {{ user_one.organization }}
                             </p>
                         </div>
                         <div>
@@ -266,10 +266,6 @@
                         </div>
                     </div>
                     <div class="media-body overflow-hidden text-start">
-                        <h5 class="card-text"> {{ user_one.name }} </h5>
-                        <p class="card-text text-uppercase">
-                            <b>Департамент: </b> {{ user_one.organization }}
-                        </p>
                         <p class="card-text">
                             <b>Должность: </b> {{ user_one.position }}
                         </p>
