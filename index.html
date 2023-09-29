@@ -257,26 +257,33 @@
                             </p>
                         </div>
                         <div>
-                            <span style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
+                            <img v-show="(user_one.photo).length > 10" class="avatar avatar-xl mb-3"
+                                 v-bind:src="'data:image/png;base64,'+user_one.photo" alt=".... ФОТО">
+                            <span v-show="(user_one.photo).length < 10"
+                                  style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
                                   class="avatar avatar-xl mb-3">
                         </span>
                         </div>
                     </div>
                     <div class="media-body overflow-hidden text-start">
-                        <p class="card-text">
-                            <b>Должность: </b> Работник {{ user_one.name }}
+                        <h5 class="card-text"> {{ user_one.name }} </h5>
+                        <p class="card-text text-uppercase">
+                            <b>Департамент: </b> {{ user_one.organization }}
                         </p>
                         <p class="card-text">
-                            <span title="Phone">Email: </span>
-                            <a href="mailto:exo.email"> admin@admin.com</a>
+                            <b>Должность: </b> {{ user_one.position }}
+                        </p>
+                        <p class="card-text">
+                            <span title="Phone">Email:</span>
+                            <a href="mailto:{{ user_one.email }}"> {{ user_one.email }}</a>
                         </p>
                         <p class="card-text">
                             <span title="Phone">Телефон: </span>
-                            <a href="tel:exo.phone_mobile"> +8 322-233-322</a>
+                            <a href="tel:{{ user_one.phone_mobile }}"> {{ user_one.phone_mobile }}</a>
                         </p>
                         <p class="card-text">
                             <span title="Phone">Телефон ВН: </span>
-                            <a href="tel:">17777</a>
+                            <a href="tel:{{ user_one.phone_internal }}">{{ user_one.phone_internal }}</a>
                         </p>
                         <p class="card-text">
                             <b>Персональная информация: - - - -</b>
