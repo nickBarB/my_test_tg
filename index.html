@@ -275,24 +275,20 @@
                         </p>
                         <p class="card-text">
                             <span title="Email">Email:</span>
-                            <a href="mailto:{{ user_one.email }}" target="_blank" rel="noopener"> {{ user_one.email
+                            <a :href="'mailto:'+user_one.email" target="_blank" rel="noopener"> {{ user_one.email
                                 }}</a>
                         </p>
                         <p class="card-text">
                             <span title="Phone">Телефон: </span>
-                            <a href="tel:{{ user_one.phone_mobile }}" target="_blank" rel="noopener">
+                            <a :href="'tel:'+user_one.phone_mobile" target="_blank" rel="noopener">
                                 {{ user_one.phone_mobile }}</a>
                         </p>
                         <p class="card-text">
                             <span title="Phone">Телефон ВН: </span>
-                            <a href="tel:{{ user_one.phone_internal }}">{{ user_one.phone_internal }}</a>
+                            <a :href="'tel:' + user_one.phone_internal">{{ user_one.phone_internal }}</a>
                         </p>
                         <p class="card-text">
                             <b>Персональная информация: - - - -</b>
-                            <a href="tel:+79626281225" target="_blank" rel="noopener">Позвонить</a>
-                            <a href="{{ user_one.email }}" target="_blank" rel="noopener"> {{ user_one.email
-                                }}</a>
-                        <p>+99833030735</p>
                         </p>
                         <p class="card-text">
                             <b>Дни отпуска: - - - -</b>
