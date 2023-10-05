@@ -349,16 +349,16 @@
                             </p>
                             <p class="card-text">
                                 <span title="Phone">Email: </span>
-                                <a v-bind:value="exo.email" href="mailto:exo.email" v-model="set_data">{{ exo.email
+                                <a v-bind:value="exo.email" :href="'mailto:'+exo.email" v-model="set_data">{{ exo.email
                                     }}</a>
                             </p>
                             <p class="card-text">
                                 <span title="Phone">Телефон: </span>
-                                <a href="tel:{{ exo.phone_mobile }}">{{ exo.phone_mobile }}</a>
+                                <a :href="'tel:'+exo.phone_mobile">{{ exo.phone_mobile }}</a>
                             </p>
                             <p class="card-text">
                                 <span title="Phone">Телефон ВН: </span>
-                                <a href="tel:{{ exo.phone_internal }}">{{ exo.phone_internal }}</a>
+                                <a :href="'tel:'+exo.phone_internal">{{ exo.phone_internal }}</a>
                             </p>
                         </div>
                     </div>
