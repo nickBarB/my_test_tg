@@ -235,6 +235,58 @@
 <body id="all_data">
 
 <div id="app">
+    <div id="contacts_data">
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="d-flex">
+                        <div class="text-start">
+                            <h5 class="card-text"> NAME </h5>
+                            <p class="card-text text-uppercase">
+                                <b>Департамент: </b>  ------
+                            </p>
+                        </div>
+                        <div>
+                            <img v-show="(user_one.photo).length > 10" class="avatar avatar-xl mb-3"
+                                 v-bind:src="'data:image/png;base64,'+user_one.photo" alt=".... ФОТО">
+                            <span v-show="(user_one.photo).length < 10"
+                                  style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
+                                  class="avatar avatar-xl mb-3">
+                        </span>
+                        </div>
+                    </div>
+                    <div class="media-body overflow-hidden text-start">
+                        <p class="card-text">
+                            <b>Должность: </b> --------
+                        </p>
+                        <p class="card-text">
+                            <span title="Email">Email:</span>
+                            <a :href="'mailto:'+user_one.email" target="_blank" rel="noopener"> --- ---</a>
+                        </p>
+                        <p class="card-text">
+                            <span title="Phone">Телефон: </span>
+                            <a :href="'tel:'+user_one.phone_mobile" target="_blank" rel="noopener">
+                                {{ user_one.phone_mobile }}</a>
+                        </p>
+                        <p class="card-text">
+                            <span title="Phone">Телефон ВН: </span>
+                            <a :href="'tel:+74950110440,' + user_one.phone_internal"
+                            target="_blank" rel="noopener" >- - - -- - -</a>
+                        </p>
+                        <p class="card-text">
+                            <b>Персональная информация: - - - -</b>
+                        </p>
+                        <p class="card-text">
+                            <b>Дни отпуска: - - - -</b>
+                        </p>
+                        <p class="card-text">
+                            <b>Задачи: - - - -</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="nav-tabs" class="text-center">
         <input type="checkbox" class="btn-check" id="aria-link" autocomplete="off" value=true
                v-model="aria_link"
@@ -285,7 +337,8 @@
                         </p>
                         <p class="card-text">
                             <span title="Phone">Телефон ВН: </span>
-                            <a :href="'tel:+74950110440,' + user_one.phone_internal">{{ user_one.phone_internal }}</a>
+                            <a :href="'tel:+74950110440,' + user_one.phone_internal"
+                            target="_blank" rel="noopener" >{{ user_one.phone_internal }}</a>
                         </p>
                         <p class="card-text">
                             <b>Персональная информация: - - - -</b>
@@ -394,10 +447,13 @@
                 query: '',
                 u_Data: [],
                 set_data: '',
-                url: 'https://internalbot.cdtek.ru/api/open/',
+                url: 'https://#',
                 checked: false,
                 aria_link: false,
-                user_info: []
+                user_info: [],
+                tg_bot_user_data: [
+
+                ]
             },
             mounted() {
                 document.title = 'Report'
