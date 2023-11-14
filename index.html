@@ -290,8 +290,19 @@
             el: '#app',
             data: {
                 query: '',
-                url: 'https://internalbot.cdtek.ru/api/open/',
-                user_info: []
+                url: 'https://##',
+                user_info: [
+                    {
+                        'name': 'user_name',
+                        'organization': 'organization',
+                        'position': 'position',
+                        'phone_mobile': '+9989898988',
+                        'phone_internal': '99999',
+                        'phone_mobile_work': '+9989898988',
+                        'email': 'email',
+                        'photo': ''
+                    }
+                ]
             },
             mounted() {
                 document.title = 'Report'
@@ -306,8 +317,8 @@
                             }
                         )
                         .then(response => {
-                            this.user_info = response.data
-                            console.log(response.data)
+                            if (response)
+                                this.user_info = response.data
                         })
                         .catch(error => {
                             console.log(error)
