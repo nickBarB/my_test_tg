@@ -233,7 +233,6 @@
     </style>
 </head>
 <body id="all_data">
-
 <div id="app">
     <div id="main_card">
         <div class="card" v-for="user_one in user_info" v-bind:value="user_one.name">
@@ -323,6 +322,8 @@
                 },
             }
         })
+        const app_elem = document.getElementById("all_data");
+        app_elem.style.display = 'block';
     }
 
 
