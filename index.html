@@ -305,19 +305,18 @@
             },
             methods: {
                 getUserInfo() {
-                    if (this.aria_link === false)
-                        axios
-                            .post(this.url, {
-                                    "method": 'user_one_info',
-                                    "user_id": tg.initDataUnsafe.user.id,
-                                }
-                            )
-                            .then(response => {
-                                this.user_info = response.data
-                            })
-                            .catch(error => {
-                                console.log(error)
-                            })
+                    axios
+                        .post(this.url, {
+                                "method": 'user_one_info',
+                                "user_id": tg.initDataUnsafe.user.id,
+                            }
+                        )
+                        .then(response => {
+                            this.user_info = response.data
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
                 },
             }
         })
