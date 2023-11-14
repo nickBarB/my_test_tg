@@ -243,15 +243,13 @@
                         <div class="text-start">
                             <h5 class="card-text"> NAME </h5>
                             <p class="card-text text-uppercase">
-                                <b>Департамент: </b>  ------
+                                <b>Департамент: </b> ------
                             </p>
                         </div>
                         <div>
-                            <img v-show="(user_one.photo).length > 10" class="avatar avatar-xl mb-3"
-                                 v-bind:src="'data:image/png;base64,'+user_one.photo" alt=".... ФОТО">
-                            <span v-show="(user_one.photo).length < 10"
-                                  style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
-                                  class="avatar avatar-xl mb-3">
+                            <span
+                                    style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
+                                    class="avatar avatar-xl mb-3">
                         </span>
                         </div>
                     </div>
@@ -261,17 +259,16 @@
                         </p>
                         <p class="card-text">
                             <span title="Email">Email:</span>
-                            <a :href="'mailto:'+user_one.email" target="_blank" rel="noopener"> --- ---</a>
+                            <a :href="'mailto:'" target="_blank" rel="noopener"> --- ---</a>
                         </p>
                         <p class="card-text">
                             <span title="Phone">Телефон: </span>
-                            <a :href="'tel:'+user_one.phone_mobile" target="_blank" rel="noopener">
-                                {{ user_one.phone_mobile }}</a>
+                            <a :href="'tel:'" target="_blank" rel="noopener"> = = = = = </a>
                         </p>
                         <p class="card-text">
                             <span title="Phone">Телефон ВН: </span>
-                            <a :href="'tel:+74950110440,' + user_one.phone_internal"
-                            target="_blank" rel="noopener" >- - - -- - -</a>
+                            <a :href="'tel:+74950110440,'"
+                               target="_blank" rel="noopener">- - - -- - -</a>
                         </p>
                         <p class="card-text">
                             <b>Персональная информация: - - - -</b>
@@ -287,152 +284,7 @@
             </div>
         </div>
     </div>
-    <div id="nav-tabs" class="text-center">
-        <input type="checkbox" class="btn-check" id="aria-link" autocomplete="off" value=true
-               v-model="aria_link"
-               @change="getUserData()">
-        <label class="nav nav-tabs nav-justified" for="aria-link">
-            <div class="nav-item d-flex align-items-center ">
-                <i v-show="!aria_link" class="nav-link active h1 bi bi-person-lines-fill">Профиль</i>
-                <i v-show="!aria_link" class="nav-link h1 text-muted bi bi-people-fill">Контакты</i>
 
-                <i v-show="aria_link" class="nav-link h1 text-muted bi bi-person-lines-fill">Профиль</i>
-                <i v-show="aria_link" class="nav-link active h1 bi bi-people-fill">Контакты</i>
-            </div>
-        </label>
-    </div>
-    <div v-show="!aria_link" id="main_card">
-        <div class="card" v-for="user_one in user_info" v-bind:value="user_one.name">
-            <div class="card-body">
-                <div class="media">
-                    <div class="d-flex">
-                        <div class="text-start">
-                            <h5 class="card-text"> {{ user_one.name }} </h5>
-                            <p class="card-text text-uppercase">
-                                <b>Департамент: </b> {{ user_one.organization }}
-                            </p>
-                        </div>
-                        <div>
-                            <img v-show="(user_one.photo).length > 10" class="avatar avatar-xl mb-3"
-                                 v-bind:src="'data:image/png;base64,'+user_one.photo" alt=".... ФОТО">
-                            <span v-show="(user_one.photo).length < 10"
-                                  style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
-                                  class="avatar avatar-xl mb-3">
-                        </span>
-                        </div>
-                    </div>
-                    <div class="media-body overflow-hidden text-start">
-                        <p class="card-text">
-                            <b>Должность: </b> {{ user_one.position }}
-                        </p>
-                        <p class="card-text">
-                            <span title="Email">Email:</span>
-                            <a :href="'mailto:'+user_one.email" target="_blank" rel="noopener"> {{ user_one.email
-                                }}</a>
-                        </p>
-                        <p class="card-text">
-                            <span title="Phone">Телефон: </span>
-                            <a :href="'tel:'+user_one.phone_mobile" target="_blank" rel="noopener">
-                                {{ user_one.phone_mobile }}</a>
-                        </p>
-                        <p class="card-text">
-                            <span title="Phone">Телефон ВН: </span>
-                            <a :href="'tel:+74950110440,' + user_one.phone_internal"
-                            target="_blank" rel="noopener" >{{ user_one.phone_internal }}</a>
-                        </p>
-                        <p class="card-text">
-                            <b>Персональная информация: - - - -</b>
-                        </p>
-                        <p class="card-text">
-                            <b>Дни отпуска: - - - -</b>
-                        </p>
-                        <p class="card-text">
-                            <b>Задачи: - - - -</b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div v-show="aria_link">
-        <div id="main">
-            <div class="input-group">
-                <input type="checkbox" class="btn-check" id="btn-checks" autocomplete="off" value=true
-                       v-model="checked"
-                       @change="getUserData()">
-                <label class="p-1 mx-3" for="btn-checks">
-                    <i v-show="!checked" class="h1 bi bi-star"></i>
-                    <i v-show="checked" class="h1 bi bi-star-fill"></i>
-                </label>
-
-                <input type="text" class="form-control rounded-start border-dark border-end-0"
-                       placeholder="  Поиск контактов" aria-label="Recipient's username"
-                       aria-describedby="button-search"
-                       v-model="query" @change="getUserData()">
-                <button class="btn btn_search btn-outline-white bg-white border-dark border-start-0 text-dark"
-                        type="button" id="button-search">
-                    <i class="h1 bi bi-search"></i>
-                </button>
-
-            </div>
-        </div>
-        <div id="main_data">
-            <div class="card" v-for="exo in u_Data" v-bind:value="exo.favs">
-                <div class="card-body">
-                    <div class="media">
-                        <div class="d-flex">
-                            <div class="text-start">
-                                <h5 class="card-text"> {{ exo.name }} </h5>
-                                <p class="card-text text-uppercase">
-                                    <b>Департамент: </b> {{ exo.organization }}
-                                </p>
-                            </div>
-                            <div>
-                                <img v-show="(exo.photo).length > 10" class="avatar avatar-xl mb-3"
-                                     v-bind:src="'data:image/png;base64,'+exo.photo" alt=".... ФОТО">
-                                <span v-show="(exo.photo).length < 10"
-                                      style="background-image: url(https://img.icons8.com/ios/100/user--v1.png)"
-                                      class="avatar avatar-xl mb-3">
-                        </span>
-                            </div>
-                        </div>
-                        <div class="media-body overflow-hidden text-start">
-                            <p class="card-text">
-                                <b>Должность: </b> {{ exo.position }}
-                            </p>
-                            <p class="card-text">
-                                <span title="Phone">Email: </span>
-                                <a v-bind:value="exo.email" :href="'mailto:'+exo.email" v-model="set_data"
-                                   target="_blank" rel="noopener">{{ exo.email
-                                    }}</a>
-                            </p>
-                            <p class="card-text">
-                                <span title="Phone">Телефон: </span>
-                                <a :href="'tel:'+exo.phone_mobile" target="_blank" rel="noopener">{{ exo.phone_mobile
-                                    }}</a>
-                            </p>
-                            <p class="card-text">
-                                <span title="Phone">Телефон ВН: </span>
-                                <a :href="'tel:+74950110440,'+exo.phone_internal" target="_blank"
-                                   rel="noopener">{{ exo.phone_internal }}</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="text-end">
-                        <a v-show="exo.favs==='True'" type="button" class="mt-3"
-                           @click="setUserData(exo.email, 0); getUserData()">
-                            <i class="h1 bi bi-star-fill"></i>
-                        </a>
-                        <a v-show="exo.favs==='False'" type="button" class="mt-3"
-                           @click="setUserData(exo.email, 1); getUserData()">
-                            <i class="h1 bi bi-star"></i>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
@@ -451,9 +303,7 @@
                 checked: false,
                 aria_link: false,
                 user_info: [],
-                tg_bot_user_data: [
-
-                ]
+                tg_bot_user_data: []
             },
             mounted() {
                 document.title = 'Report'
